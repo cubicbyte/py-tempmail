@@ -19,7 +19,7 @@ pip install git+https://github.com/cubicbyte/tempmail-python.git
 
 Receive a message (e.g. activation code)
 ```python
-from tempmail import EMail
+from tempMail import EMail
 
 email = EMail()
 print(email.address)  # qwerty123@1secmail.com
@@ -32,7 +32,7 @@ print(msg.body)  # Hello World!\n
 
 Get all messages in the inbox
 ```python
-from tempmail import EMail
+from tempMail import EMail
 
 email = EMail('example@1secmail.com')
 inbox = email.get_inbox()
@@ -43,7 +43,7 @@ for msg_info in inbox:
 
 Download an attachment
 ```python
-from tempmail import EMail
+from tempMail import EMail
 
 email = EMail(username='example', domain='1secmail.com')
 msg = email.wait_for_message()
@@ -63,7 +63,7 @@ if msg.attachments:
 
 Get reddit activation code
 ```python
-from tempmail import EMail
+from tempMail import EMail
 
 def reddit_filter(msg):
     return (msg.from_addr == 'noreply@reddit.com' and
@@ -76,7 +76,7 @@ msg = email.wait_for_message(filter=reddit_filter)
 
 Some other features:
 ```python
-from tempmail.providers import OneSecMail
+from tempMail.providers import OneSecMail
 
 email = OneSecMail()
 
